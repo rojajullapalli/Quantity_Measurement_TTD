@@ -1,6 +1,6 @@
 public class QuantityException extends Exception{
     enum ExceptionType{
-        ENTERED_VALUES_NOT_EQUAL;
+        FEET_TO_INCH
     }
     ExceptionType type;
     public QuantityException(ExceptionType type, String message) {

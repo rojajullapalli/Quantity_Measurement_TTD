@@ -136,10 +136,10 @@ public class QuantityMeasurementTest {
     void given1FeetAnd12Inch_WhenCompared_ShouldReturnTrue() {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
         try {
-            boolean convertValue = quantityMeasurement.convertFeetInch(1.0, 12);
+            boolean convertValue = quantityMeasurement.convertFeetToInch(1.0, 12);
             Assertions.assertEquals(convertValue, true);
         }catch (QuantityException e){
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 }
