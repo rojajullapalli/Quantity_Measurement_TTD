@@ -14,4 +14,11 @@ public class QuantityMeasurement {
         return false;
     }
 
+    public boolean convertInchToyard(int inch, int yard) {
+        double yardconversion = yard * 36;
+        if(yardconversion == inch)
+            return true;
+        return false;
+    }
+
 }

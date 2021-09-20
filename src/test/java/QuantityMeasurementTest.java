@@ -153,4 +153,11 @@ public class QuantityMeasurementTest {
         Assertions.assertNotEquals(convertValue, true);
     }
 
+    @Test
+    void given1InchAnd1Yard_WhenCompared_ShouldReturnFalse() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        boolean convertValue = quantityMeasurement.convertInchToyard(1, 1);
+        Assertions.assertFalse(convertValue);
+    }
+
 }
