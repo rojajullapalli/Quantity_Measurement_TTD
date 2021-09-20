@@ -15,4 +15,12 @@ public class QuantityMeasurementTest {
         Feet feet1 = new Feet(1.0);
         Assertions.assertNotEquals(feet,feet1);
     }
+
+    @Test
+    void givenNullFeet_WhenCompared_ShouldReturnFalse() {
+        Feet feet1 = null;
+        Feet feet2 = new Feet(0.0);
+        Assertions.assertNotEquals(feet1,feet2);
+    }
+
 }
