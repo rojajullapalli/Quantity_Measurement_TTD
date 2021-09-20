@@ -68,4 +68,18 @@ public class QuantityMeasurementTest {
         Assertions.assertTrue(actualValue);
     }
 
+    @Test
+    void given0Inchand0Inch_ShouldReturnEqual() {
+        Inch inch = new Inch(0.0);
+        Inch inch1 = new Inch(0.0);
+        Assertions.assertEquals(inch, inch1);
+    }
+
+    @Test
+    void given0Inchand1Inch_ShouldReturnNotEqual() {
+        Inch inch = new Inch(0.0);
+        Inch inch1 = new Inch(1.0);
+        Assertions.assertNotEquals(inch, inch1);
+    }
+
 }
