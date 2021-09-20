@@ -82,4 +82,11 @@ public class QuantityMeasurementTest {
         Assertions.assertNotEquals(inch, inch1);
     }
 
+    @Test
+    void givenNullInch__WhenCompared_ShouldReturnFalse() {
+        Inch inch = new Inch(0.0);
+        Inch inch1 = null;
+        Assertions.assertNotEquals(inch, inch1);
+    }
+
 }
