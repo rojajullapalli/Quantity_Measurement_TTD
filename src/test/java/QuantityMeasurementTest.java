@@ -52,4 +52,20 @@ public class QuantityMeasurementTest {
         Assertions.assertEquals(feet, feet1);
     }
 
+    @Test
+    void given0Feet1feetForEqualityCheck_ShouldReturnFalse() {
+        Feet feet = new Feet(0.0);
+        Feet feet1 = new Feet(0.1);
+        boolean actualValue = feet.equals(feet1);
+        Assertions.assertFalse(actualValue);
+    }
+
+    @Test
+    void given0Feet0feetForEqualityCheck_ShouldReturnTrue() {
+        Feet feet = new Feet(0.0);
+        Feet feet1 = new Feet(0.0);
+        boolean actualValue = feet.equals(feet1);
+        Assertions.assertTrue(actualValue);
+    }
+
 }
