@@ -99,9 +99,23 @@ public class QuantityMeasurementTest {
     @Test
     void givenInchWithDiffrentReference_ShouldReturnFalse() {
         Inch inch = new Inch(0.0);
-        Inch inch1 = new Inch(1.0);
+        Inch inch1 = new Inch(0.0);
         boolean actualValue = inch == inch1;
         Assertions.assertFalse(actualValue);
+    }
+
+    @Test
+    void givenDifferentTypeInch_ShouldReturnFalse() {
+        Inch inch = new Inch(0.0);
+        FirstInch inch1 = new FirstInch(0.0);
+        Assertions.assertNotEquals(inch, inch1);
+    }
+
+    @Test
+    void givensameTypeInch_ShouldReturnTrue() {
+        Inch inch = new Inch(0.0);
+        Inch inch1 = new Inch(0.0);
+        Assertions.assertEquals(inch, inch1);
     }
 
 
