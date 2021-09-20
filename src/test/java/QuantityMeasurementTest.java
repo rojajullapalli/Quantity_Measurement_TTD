@@ -118,5 +118,18 @@ public class QuantityMeasurementTest {
         Assertions.assertEquals(inch, inch1);
     }
 
+    @Test
+    void given0Inch1InchForValueEquality_ShouldReturnFalse() {
+        Inch inch = new Inch(0.0);
+        Inch inch1 = new Inch(0.1);
+        Assertions.assertNotEquals(inch, inch1);
+    }
 
+    @Test
+    void given0Inch0InchForValueEquality_ShouldReturnTrue() {
+        Inch inch = new Inch(0.0);
+        Inch inch1 = new Inch(0.0);
+        Assertions.assertEquals(inch, inch1);
+    }
+    
 }
