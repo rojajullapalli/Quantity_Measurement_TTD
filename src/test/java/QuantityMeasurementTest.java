@@ -131,5 +131,15 @@ public class QuantityMeasurementTest {
         Inch inch1 = new Inch(0.0);
         Assertions.assertEquals(inch, inch1);
     }
-    
+
+    @Test
+    void given1FeetAnd12Inch_WhenCompared_ShouldReturnTrue() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        try {
+            boolean convertValue = quantityMeasurement.convertFeetInch(1.0, 12);
+            Assertions.assertEquals(convertValue, true);
+        }catch (QuantityException e){
+            e.printStackTrace();
+        }
+    }
 }
