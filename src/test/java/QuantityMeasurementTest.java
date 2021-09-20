@@ -24,7 +24,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    void givenFeetWithSameReference_WhenCompared_ShouldReturnTrue(){
+    void givenFeetWithSameReference_WhenCompared_ShouldReturnTrue() {
         Feet feet = new Feet(0.0);
         boolean sameReference = feet == feet;
         Assertions.assertTrue(sameReference);
@@ -90,7 +90,7 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    void givenInchWithSameReference_ShouldReturnTrue(){
+    void givenInchWithSameReference_ShouldReturnTrue() {
         Inch inch = new Inch(0.0);
         boolean actualValue = inch == inch;
         Assertions.assertTrue(actualValue);
@@ -138,8 +138,20 @@ public class QuantityMeasurementTest {
         try {
             boolean convertValue = quantityMeasurement.convertFeetToInch(1.0, 12);
             Assertions.assertEquals(convertValue, true);
-        }catch (QuantityException e){
+        } catch (QuantityException e) {
             System.out.println(e.getMessage());
         }
     }
+
+    @Test
+    void given3FeetAnd1Yard_WhenCompared_ShouldReturnTrue() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        try {
+            boolean convertValue = quantityMeasurement.convertFeetToyard(3.0, 1);
+            Assertions.assertEquals(convertValue, true);
+        } catch (QuantityException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
 }
