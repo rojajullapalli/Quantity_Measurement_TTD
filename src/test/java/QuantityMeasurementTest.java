@@ -140,10 +140,17 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    void given3FeetAnd1Yard_WhenCompared_ShouldReturnTrue() {
+    void given3FeetAnd1Yard_WhenCompared_ShouldReturnEqual() {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
         boolean convertValue = quantityMeasurement.convertFeetToyard(3.0, 1);
         Assertions.assertEquals(convertValue, true);
+    }
+
+    @Test
+    void given1FeetAnd1Yard_WhenCompared_ShouldReturnNotEqual() {
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+        boolean convertValue = quantityMeasurement.convertFeetToyard(1.0, 1);
+        Assertions.assertNotEquals(convertValue, true);
     }
 
 }
