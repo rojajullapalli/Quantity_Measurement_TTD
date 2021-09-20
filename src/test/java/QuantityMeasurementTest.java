@@ -135,23 +135,15 @@ public class QuantityMeasurementTest {
     @Test
     void given1FeetAnd12Inch_WhenCompared_ShouldReturnTrue() {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-        try {
-            boolean convertValue = quantityMeasurement.convertFeetToInch(1.0, 12);
-            Assertions.assertEquals(convertValue, true);
-        } catch (QuantityException e) {
-            System.out.println(e.getMessage());
-        }
+        boolean convertValue = quantityMeasurement.convertFeetToInch(1.0, 12);
+        Assertions.assertEquals(convertValue, true);
     }
 
     @Test
     void given3FeetAnd1Yard_WhenCompared_ShouldReturnTrue() {
         QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-        try {
-            boolean convertValue = quantityMeasurement.convertFeetToyard(3.0, 1);
-            Assertions.assertEquals(convertValue, true);
-        } catch (QuantityException e) {
-            System.out.println(e.getMessage());
-        }
+        boolean convertValue = quantityMeasurement.convertFeetToyard(3.0, 1);
+        Assertions.assertEquals(convertValue, true);
     }
-    
+
 }

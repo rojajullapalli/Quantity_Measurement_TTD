@@ -1,17 +1,17 @@
 public class QuantityMeasurement {
 
-    public boolean convertFeetToInch(double feet, int inch) throws QuantityException {
+    public boolean convertFeetToInch(double feet, int inch) {
         double feetConversion = feet * 12;
-        if (feetConversion != inch)
-            throw new QuantityException(QuantityException.ExceptionType.FEET_TO_INCH, "please enter values that should be matched");
-        return true;
+        if (feetConversion == inch)
+            return true;
+        return false;
     }
 
-    public boolean convertFeetToyard(double feet, int yard) throws QuantityException {
+    public boolean convertFeetToyard(double feet, int yard) {
         double feetCoversion = yard * 3;
-        if (feetCoversion != feet)
-            throw new QuantityException(QuantityException.ExceptionType.FEET_TO_YARD, "please enter values that should be matched");
-        return true;
+        if (feetCoversion == feet)
+            return true;
+        return false;
     }
 
 }
