@@ -38,5 +38,18 @@ public class QuantityMeasurementTest {
         Assertions.assertFalse(differentReference);
     }
 
+    @Test
+    void givenDifferentType_WhenCompared_ShouldReturnFalse() {
+        Feet feet = new Feet(0.0);
+        FirstFeet feet1 = new FirstFeet(0.0);
+        Assertions.assertNotEquals(feet, feet1);
+    }
+
+    @Test
+    void givensameType_WhenCompared_ShouldReturnTrue() {
+        Feet feet = new Feet(0.0);
+        Feet feet1 = new Feet(0.0);
+        Assertions.assertEquals(feet, feet1);
+    }
 
 }
