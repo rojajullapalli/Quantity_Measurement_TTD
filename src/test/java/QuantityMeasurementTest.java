@@ -280,4 +280,28 @@ public class QuantityMeasurementTest {
         Assertions.assertEquals(add,2000);
     }
 
+    @Test
+    void given1KgAnd100Grams_ShouldReturnTrue() {
+        Length kilogram = new Length(Length.Unit.KILOGRAM, 1);
+        Length gram = new Length(Length.Unit.GRAM, 1000.0);
+        boolean compareCheck = kilogram.compare(gram);
+        Assertions.assertTrue(compareCheck);
+    }
+
+    @Test
+    void given1TonneAnd1000Kg_ShouldReturnTrue() {
+        Length tonne = new Length(Length.Unit.TONNE, 1.0);
+        Length kilogram = new Length(Length.Unit.KILOGRAM, 1000.0);
+        boolean compareCheck = tonne.compare(kilogram);
+        Assertions.assertTrue(compareCheck);
+    }
+
+    @Test
+    void given1TonneAnd1000Gram_WhenAdded_ShouldReturn1001Kg() {
+        Length tonne = new Length(Length.Unit.TONNE, 1.0);
+        Length gram = new Length(Length.Unit.GRAM, 1000.0);
+        double add = tonne.addVolumesToLitres(gram);
+        Assertions.assertEquals(add,1001);
+    }
+
 }
