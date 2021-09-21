@@ -247,4 +247,20 @@ public class QuantityMeasurementTest {
         double add = inch.addLengthsToInches(centimeter);
         Assertions.assertEquals(add,3);
     }
+
+    @Test
+    void given1GallonAnd3And78Litres_ShouldReturnTrue() {
+        Length gallon = new Length(Length.Unit.GALLON, 1.0);
+        Length litre = new Length(Length.Unit.LITRES, 3.78);
+        boolean compareCheck = gallon.compare(litre);
+        Assertions.assertTrue(compareCheck);
+    }
+
+    @Test
+    void given1LitreAnd3And1000Ml_ShouldReturnTrue() {
+        Length litre = new Length(Length.Unit.LITRES, 1);
+        Length milliMeter = new Length(Length.Unit.MILLIMETER, 1000.0);
+        boolean compareCheck = litre.compare(milliMeter);
+        Assertions.assertTrue(compareCheck);
+    }
 }
