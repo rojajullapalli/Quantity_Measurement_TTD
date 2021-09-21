@@ -130,25 +130,25 @@ public class QuantityMeasurementTest {
 
     @Test
     void given0FeetAnd0Inch_ShouldReturnTrue() {
-        Length feet1 = new Length(Length.Unit.FEET, 0.0);
-        Length feet2 = new Length(Length.Unit.INCH, 0.0);
-        boolean compareCheck = feet1.compare(feet2);
+        Length feet = new Length(Length.Unit.FEET, 0.0);
+        Length inch = new Length(Length.Unit.INCH, 0.0);
+        boolean compareCheck = feet.compare(inch);
         Assertions.assertTrue(compareCheck);
     }
 
     @Test
     void given1FeetAnd1Inch_ShouldReturnFalse() {
-        Length feet1 = new Length(Length.Unit.FEET, 1.0);
-        Length feet2 = new Length(Length.Unit.INCH, 1.0);
-        boolean compareCheck = feet1.compare(feet2);
+        Length feet = new Length(Length.Unit.FEET, 1.0);
+        Length inch = new Length(Length.Unit.INCH, 1.0);
+        boolean compareCheck = feet.compare(inch);
         Assertions.assertFalse(compareCheck);
     }
 
     @Test
     void given1FeetAnd12Inch_ShouldReturnTrue() {
-        Length feet1 = new Length(Length.Unit.FEET, 1.0);
-        Length feet2 = new Length(Length.Unit.INCH, 12.0);
-        boolean compareCheck = feet1.compare(feet2);
+        Length feet = new Length(Length.Unit.FEET, 1.0);
+        Length inch = new Length(Length.Unit.INCH, 12.0);
+        boolean compareCheck = feet.compare(inch);
         Assertions.assertTrue(compareCheck);
     }
 
@@ -162,49 +162,57 @@ public class QuantityMeasurementTest {
 
     @Test
     void given3FeetAnd1Yard_ShouldReturnTrue() {
-        Length feet1 = new Length(Length.Unit.FEET, 3.0);
-        Length feet2 = new Length(Length.Unit.YARD, 1.0);
-        boolean compareCheck = feet1.compare(feet2);
+        Length feet = new Length(Length.Unit.FEET, 3.0);
+        Length yard = new Length(Length.Unit.YARD, 1.0);
+        boolean compareCheck = feet.compare(yard);
         Assertions.assertTrue(compareCheck);
     }
 
     @Test
     void given1FeetAnd1Yard_ShouldReturnFalse() {
-        Length feet1 = new Length(Length.Unit.FEET, 1.0);
-        Length feet2 = new Length(Length.Unit.YARD, 1.0);
-        boolean compareCheck = feet1.compare(feet2);
+        Length feet = new Length(Length.Unit.FEET, 1.0);
+        Length yard = new Length(Length.Unit.YARD, 1.0);
+        boolean compareCheck = feet.compare(yard);
         Assertions.assertFalse(compareCheck);
     }
 
     @Test
     void given1InchAnd1Yard_ShouldReturnFalse() {
-        Length feet1 = new Length(Length.Unit.INCH, 1.0);
-        Length feet2 = new Length(Length.Unit.YARD, 1.0);
-        boolean compareCheck = feet1.compare(feet2);
+        Length inch = new Length(Length.Unit.INCH, 1.0);
+        Length yard = new Length(Length.Unit.YARD, 1.0);
+        boolean compareCheck = inch.compare(yard);
         Assertions.assertFalse(compareCheck);
     }
 
     @Test
     void given36InchAnd1Yard_ShouldReturnTrue() {
-        Length feet1 = new Length(Length.Unit.INCH, 36.0);
-        Length feet2 = new Length(Length.Unit.YARD, 1.0);
-        boolean compareCheck = feet1.compare(feet2);
+        Length inch = new Length(Length.Unit.INCH, 36.0);
+        Length yard = new Length(Length.Unit.YARD, 1.0);
+        boolean compareCheck = inch.compare(yard);
         Assertions.assertTrue(compareCheck);
     }
 
     @Test
     void given1YardAnd36Inch_ShouldReturnTrue() {
-        Length feet1 = new Length(Length.Unit.YARD, 1.0);
-        Length feet2 = new Length(Length.Unit.INCH, 36.0);
-        boolean compareCheck = feet2.compare(feet1);
+        Length yard = new Length(Length.Unit.YARD, 1.0);
+        Length inch = new Length(Length.Unit.INCH, 36.0);
+        boolean compareCheck = inch.compare(yard);
         Assertions.assertTrue(compareCheck);
     }
 
     @Test
     void given1YardAnd3Feet_ShouldReturnTrue() {
-        Length feet1 = new Length(Length.Unit.YARD, 1.0);
-        Length feet2 = new Length(Length.Unit.FEET, 3.0);
-        boolean compareCheck = feet2.compare(feet1);
+        Length yard = new Length(Length.Unit.YARD, 1.0);
+        Length feet = new Length(Length.Unit.FEET, 3.0);
+        boolean compareCheck = feet.compare(yard);
+        Assertions.assertTrue(compareCheck);
+    }
+
+    @Test
+    void given2InchAnd5Centimeter_ShouldReturnTrue() {
+        Length inch = new Length(Length.Unit.INCH, 2.0);
+        Length centimeter = new Length(Length.Unit.CENTIMETER, 5.08);
+        boolean compareCheck = inch.compare(centimeter);
         Assertions.assertTrue(compareCheck);
     }
 }
