@@ -1,9 +1,7 @@
-import java.util.Objects;
-
-public class Inch {
+public class Yard {
     private final double value;
 
-    public Inch(double value) {
+    public Yard(double value) {
         this.value = value;
     }
 
@@ -11,12 +9,12 @@ public class Inch {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Inch inch = (Inch) o;
-        return Double.compare(inch.value, value) == 0;
+        Yard yard = (Yard) o;
+        return Double.compare(yard.value, value) == 0;
     }
 
-    public double getInchToYard() {
-        double conversion = value * 36;
+    public double getYardToFeet() {
+        double conversion = value * 3;
         return conversion;
     }
 }

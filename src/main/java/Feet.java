@@ -7,6 +7,11 @@ public class Feet {
         this.value = value;
     }
 
+    public double getFeetToInch(){
+        double conversion = value * 12;
+        return conversion;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

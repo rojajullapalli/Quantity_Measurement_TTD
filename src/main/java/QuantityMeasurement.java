@@ -1,22 +1,22 @@
 public class QuantityMeasurement {
 
-    public boolean convertFeetToInch(double feet, int inch) {
-        double feetConversion = feet * 12;
-        if (feetConversion == inch)
-            return true;
-        return false;
+    public double getFeetToInch(double feet){
+        double conversion = feet * 12;
+        return conversion;
     }
 
-    public boolean convertFeetToyard(double feet, int yard) {
-        double feetCoversion = yard * 3;
-        if (feetCoversion == feet)
-            return true;
-        return false;
+    public double feetToYard(double yard){
+        double conversion = yard * 3;
+        return conversion;
     }
 
-    public boolean convertInchToyard(int inch, int yard) {
-        double yardconversion = yard * 36;
-        if(yardconversion == inch)
+    public double inchToYard(double inch){
+        double conversion = inch * 36;
+        return conversion;
+    }
+
+    public boolean compare(double value1, double value2){
+        if(value1 == value2)
             return true;
         return false;
     }
