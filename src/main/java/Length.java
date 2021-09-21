@@ -28,6 +28,18 @@ public class Length {
         return false;
     }
 
+    public double addLengthsToInches(Length value){
+        if(this.unit.equals(Unit.INCH) && value.unit.equals(Unit.INCH))
+            return this.value + value.value;
+        if(this.unit.equals(Unit.FEET) && value.unit.equals(Unit.INCH))
+            return (this.value * FEET_TO_INCH) + value.value;
+        if(this.unit.equals(Unit.FEET) && value.unit.equals(Unit.FEET))
+            return (this.value * FEET_TO_INCH) + (value.value * FEET_TO_INCH);
+        if(this.unit.equals(Unit.INCH) && value.unit.equals(Unit.CENTIMETER))
+            return (this.value) + (value.value / INCH_TO_CENTIMETER);
+        return 0;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

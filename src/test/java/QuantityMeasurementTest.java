@@ -215,4 +215,36 @@ public class QuantityMeasurementTest {
         boolean compareCheck = inch.compare(centimeter);
         Assertions.assertTrue(compareCheck);
     }
+
+    @Test
+    void given2InchAnd2Inch_WhenAdd_ShouldReturnFourInches() {
+        Length inch = new Length(Length.Unit.INCH, 2.0);
+        Length inch1 = new Length(Length.Unit.INCH, 2.0);
+        double add = inch.addLengthsToInches(inch1);
+        Assertions.assertEquals(add,4);
+    }
+
+    @Test
+    void given1FeetAnd2Inch_WhenAdd_ShouldReturnFourTeenInches() {
+        Length feet = new Length(Length.Unit.FEET, 1.0);
+        Length inch = new Length(Length.Unit.INCH, 2.0);
+        double add = feet.addLengthsToInches(inch);
+        Assertions.assertEquals(add,14);
+    }
+
+    @Test
+    void given1FeetAnd1Feet_WhenAdd_ShouldReturnTwentyFourInches() {
+        Length feet = new Length(Length.Unit.FEET, 1.0);
+        Length feet1 = new Length(Length.Unit.FEET, 1.0);
+        double add = feet.addLengthsToInches(feet1);
+        Assertions.assertEquals(add,24);
+    }
+
+    @Test
+    void given2InchAnd2AndHalfCentimeter_WhenAdd_ShouldReturn3Inches() {
+        Length inch = new Length(Length.Unit.INCH, 2.0);
+        Length centimeter = new Length(Length.Unit.CENTIMETER, 2.54);
+        double add = inch.addLengthsToInches(centimeter);
+        Assertions.assertEquals(add,3);
+    }
 }
