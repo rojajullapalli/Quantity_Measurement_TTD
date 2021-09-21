@@ -8,11 +8,12 @@ public class Length {
     private static final double LITRES_TO_MILLILITER = 1000;
     private static final double KILOGRAM_TO_GRAM = 1000;
     private static final double TONNE_TO_KILOGRAM = 1000;
+    private static final double FAHRENHEIT_TO_CELSIUS = 32;
     private final double value;
     private final Unit unit;
 
 
-    enum Unit {FEET, INCH, YARD, CENTIMETER, GALLON, LITRES, MILLILITER, GRAM, TONNE, KILOGRAM};
+    enum Unit {FEET, INCH, YARD, CENTIMETER, GALLON, LITRES, MILLILITER, GRAM, TONNE, KILOGRAM, FAHRENHEIT, CELSIUS};
 
     public Length(Unit unit, double value) {
         this.unit = unit;
@@ -38,6 +39,8 @@ public class Length {
             return Double.compare(this.value * KILOGRAM_TO_GRAM, value2.value) == 0;
         if (this.unit.equals(Unit.TONNE) && value2.unit.equals(Unit.KILOGRAM))
             return Double.compare(this.value * TONNE_TO_KILOGRAM, value2.value) == 0;
+        if (this.unit.equals(Unit.FAHRENHEIT) && value2.unit.equals(Unit.CELSIUS))
+            return Double.compare(((this.value - FAHRENHEIT_TO_CELSIUS) / 1.8), value2.value) == 0;
         return false;
     }
 

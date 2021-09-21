@@ -304,4 +304,12 @@ public class QuantityMeasurementTest {
         Assertions.assertEquals(add,1001);
     }
 
+    @Test
+    void given212FahrenheitAnd100Celsius_ShouldReturnTrue() {
+        Length fah = new Length(Length.Unit.FAHRENHEIT, 212.0);
+        Length cel = new Length(Length.Unit.CELSIUS, 100.0);
+        boolean compareCheck = fah.compare(cel);
+        Assertions.assertTrue(compareCheck);
+    }
+
 }
