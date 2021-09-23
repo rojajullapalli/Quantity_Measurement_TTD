@@ -7,20 +7,18 @@ public class Length {
         this.value = value;
     }
 
-    public static boolean compare(Length l1, Length l2) {
-        return Double.compare(l1.getValue() * l1.getUnit().baseUnitConversion, l2.getValue() * l2.getUnit().baseUnitConversion) == 0;
+    public Double unitConversion(double value, Unit temperature) {
+        if (temperature.equals(Unit.FAHRENHEIT))
+            return Unit.celTofah(value);
+        return Unit.fahToCel(value);
     }
 
-    public static double addLengthsToInches(Length l1, Length l2) {
-        return l1.getValue() * l1.getUnit().baseUnitConversion + l2.getValue() * l2.getUnit().baseUnitConversion;
+    public boolean compare(Length l2) {
+        return Unit.compare(this.value, this.unit, l2.value, l2.unit);
     }
 
-    public Unit getUnit() {
-        return unit;
-    }
-
-    public double getValue() {
-        return value;
+    public double addLengthsToInches(Length l2) {
+        return Unit.add(this.value, this.unit, l2.value, l2.unit);
     }
 
     @Override
