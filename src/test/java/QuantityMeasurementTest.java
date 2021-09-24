@@ -220,7 +220,7 @@ public class QuantityMeasurementTest {
     void given2InchAnd2Inch_WhenAdd_ShouldReturnFourInches() {
         Length inch = new Length(Unit.INCH, 2.0);
         Length inch1 = new Length(Unit.INCH, 2.0);
-        double add = inch.addLengthsToInches(inch1);
+        double add = inch.add(inch1);
         Assertions.assertEquals(add, 4);
     }
 
@@ -228,7 +228,7 @@ public class QuantityMeasurementTest {
     void given1FeetAnd2Inch_WhenAdd_ShouldReturnFourTeenInches() {
         Length feet = new Length(Unit.FEET_TO_INCH, 1.0);
         Length inch = new Length(Unit.INCH, 2.0);
-        double add = feet.addLengthsToInches(inch);
+        double add = feet.add(inch);
         Assertions.assertEquals(add, 14);
     }
 
@@ -236,7 +236,7 @@ public class QuantityMeasurementTest {
     void given1FeetAnd1Feet_WhenAdd_ShouldReturnTwentyFourInches() {
         Length feet = new Length(Unit.FEET_TO_INCH, 1.0);
         Length feet1 = new Length(Unit.FEET_TO_INCH, 1.0);
-        double add = feet.addLengthsToInches(feet1);
+        double add = feet.add(feet1);
         Assertions.assertEquals(add, 24);
     }
 
@@ -244,7 +244,7 @@ public class QuantityMeasurementTest {
     void given2InchAnd2AndHalfCentimeter_WhenAdd_ShouldReturn3Inches() {
         Length inch = new Length(Unit.INCH, 2.0);
         Length centimeter = new Length(Unit.CENTIMETER_TO_INCH, 2.54);
-        double add = inch.addLengthsToInches(centimeter);
+        double add = inch.add(centimeter);
         Assertions.assertEquals(add, 3);
     }
 
@@ -268,7 +268,7 @@ public class QuantityMeasurementTest {
     void given2GallonAnd3And78Litres_WhenAdd_ShouldReturn7And57Litres() {
         Length gallon = new Length(Unit.GALLON_TO_LITRE, 1.0);
         Length litres = new Length(Unit.LITRE, 3.78);
-        double add = gallon.addLengthsToInches(litres);
+        double add = gallon.add(litres);
         Assertions.assertEquals(add, 7.56);
     }
 
@@ -276,7 +276,7 @@ public class QuantityMeasurementTest {
     void given1MilliLitreAnd1Litres_WhenAdd_ShouldReturn1000Litres() {
         Length litre = new Length(Unit.LITRE, 1);
         Length millilitre = new Length(Unit.MILLILITER_TO_LITRE, 1000.0);
-        double add = litre.addLengthsToInches(millilitre);
+        double add = litre.add(millilitre);
         Assertions.assertEquals(add, 2);
     }
 
@@ -300,7 +300,7 @@ public class QuantityMeasurementTest {
     void given1TonneAnd1000Gram_WhenAdded_ShouldReturn1001Kg() {
         Length tonne = new Length(Unit.TONNE_TO_KILOGRAM, 1.0);
         Length gram = new Length(Unit.GRAMS_TO_KILOGRAM, 1000.0);
-        double add = tonne.addLengthsToInches(gram);
+        double add = tonne.add(gram);
         Assertions.assertEquals(add, 1001);
     }
 

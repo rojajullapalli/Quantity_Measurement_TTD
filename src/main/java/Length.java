@@ -8,16 +8,14 @@ public class Length {
     }
 
     public Double unitConversion(double value, Unit temperature) {
-        if (temperature.equals(Unit.FAHRENHEIT))
-            return Unit.celTofah(value);
-        return Unit.fahToCel(value);
+        return Unit.celTofah(value, temperature);
     }
 
     public boolean compare(Length l2) {
         return Unit.compare(this.value, this.unit, l2.value, l2.unit);
     }
 
-    public double addLengthsToInches(Length l2) {
+    public double add(Length l2) {
         return Unit.add(this.value, this.unit, l2.value, l2.unit);
     }
 

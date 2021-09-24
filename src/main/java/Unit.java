@@ -26,11 +26,10 @@ public enum Unit {
         return value * unit.baseUnitConversion + value1 * unit1.baseUnitConversion;
     }
 
-    public static Double celTofah(double value) {
-        return (value - TEMPERATURE_CONSTANT) / Unit.CELSIUS.baseUnitConversion;
-    }
-
-    public static Double fahToCel(double value) {
+    public static Double celTofah(double value, Unit temperature) {
+        if (temperature == Unit.FAHRENHEIT)
+            return (value - TEMPERATURE_CONSTANT) / Unit.CELSIUS.baseUnitConversion;
         return (value * Unit.FAHRENHEIT.baseUnitConversion) + TEMPERATURE_CONSTANT;
     }
+
 }
